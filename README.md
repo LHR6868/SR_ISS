@@ -36,13 +36,14 @@ SR_ISS/
 Recommended environment:
 
 * Python 3.9+
-* PyTorch
 * NumPy
 * OpenCV
 * Rasterio
 * GDAL
 * Matplotlib
 * Jupyter Notebook
+* tensorflow
+* keras
 
 Install dependencies using:
 
