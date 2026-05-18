@@ -77,11 +77,11 @@ def spatial_attention(input_feature):
 		channel = input_feature.shape[-1]
 		cbam_feature = input_feature
 	
-	avg_pool = Lambda(lambda x: K.mean(x, axis=-1, keepdims=True))(cbam_feature)  # 对张量求平均值，改变第三维坐标，并保持原本维度
+	avg_pool = Lambda(lambda x: K.mean(x, axis=-1, keepdims=True))(cbam_feature)  
 	#assert avg_pool._keras_shape[-1] == 1
 	max_pool = Lambda(lambda x: K.max(x, axis=-1, keepdims=True))(cbam_feature)
 	#assert max_pool._keras_shape[-1] == 1
-	concat = Concatenate(3)([avg_pool, max_pool])  # 拼接
+	concat = Concatenate(3)([avg_pool, max_pool])  
 	#assert concat._keras_shape[-1] == 2
 	concat = Permute((3, 1, 2))(concat)
 	cbam_feature = Conv2D(1, (1, 1))(concat)
@@ -99,7 +99,7 @@ def eca_block(input_feature, b=1, gamma=2, name=""):
 	x = Conv1D(1, kernel_size=kernel_size, padding="same", use_bias=False,)(x)
 	x = Activation('sigmoid')(x)
 	x = Reshape((1, 1, -1))(x)
-	x = Permute((3, 1, 2))(x)#调换顺序
+	x = Permute((3, 1, 2))(x)
 	output = multiply([input_feature,x])
 	return output
 
