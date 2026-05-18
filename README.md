@@ -126,7 +126,7 @@ In `experiment.ipynb`, the variable `dir_im_high` corresponds to the auxiliary h
 To obtain the final 2.5 m reconstruction result, the reconstruction procedure must be executed three times sequentially:
 
 1. 20 m → 10 m
-   (`E98N34_4328bands_10m_clip4.tif` + `E98N34_10bands_20m_clip4.tif`
+   (`E98N34_4328bands_10m_clip4.tif` + `E98N34_6bands_20m_clip4.tif`
    → `E98N34_10bands_10m_clip4.tif`)
 
 2. 10 m → 5 m
