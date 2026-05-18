@@ -126,8 +126,8 @@ In `experiment.ipynb`, the variable `dir_im_high` corresponds to the auxiliary h
 To obtain the final 2.5 m reconstruction result, the reconstruction procedure must be executed three times sequentially:
 
 1. 20 m → 10 m
-   (`E98N34_4328bands_10m_clip4.tif` + `E98N34_6bands_20m_clip4.tif`
-   → `E98N34_10bands_10m_clip4.tif`)
+   (`E98N34_4328bands_10m.tif` + `E98N34_6bands_20m.tif`
+   → `E98N34_10bands_10m.tif`)
 
 2. 10 m → 5 m
    (`E98N34_4328bands_5m_clip4.tif` + `E98N34_10bands_10m_clip4.tif`
@@ -137,7 +137,7 @@ To obtain the final 2.5 m reconstruction result, the reconstruction procedure mu
    (`E98N34_4328bands_2.5m_clip4.tif` + `E98N34_10bands_5m_clip4.tif`
    → `E98N34_10bands_2.5m_clip4.tif`)
 
-The `10bands` data and `4328bands` data should be used together during reconstruction.
+The `10bands` data and `4328bands` data should be used together during reconstruction.The first reconstruction stage is performed on the full Sentinel-2 image to generate the initial 10 m super-resolved result. The subsequent 10 m → 5 m and 5 m → 2.5 m reconstruction stages are conducted on local clipped regions to facilitate detailed visual comparison, reduce computational cost, and improve the efficiency of high-resolution reconstruction experiments.
 
 At each stage:
 
