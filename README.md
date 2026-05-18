@@ -149,7 +149,7 @@ After each reconstruction stage, replace the input file path with the generated 
 Final reconstruction result:
 
 ```text
-E98N34_4328bands_2.5m_clip4.tif
+E98N34_10bands_2.5m_clip4.tif
 ```
 
 Due to storage limitations, the complete 10 m and 20 m Sentinel-2 testing datasets are provided via Google Drive, while only partial 10 m, 5 m, and 2.5 m sample data are included in `data/test_data` for demonstration and reconstruction examples.
