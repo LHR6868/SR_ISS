@@ -26,6 +26,16 @@ SR_ISS/
 ├── utils/
 │   └── model files
 │
+├── data/
+│   ├── network/
+│   ├── test_data/
+│   │   ├── E98N34_10bands_10m_clip4.tif
+│   │   ├── E98N34_10bands_5m_clip4.tif
+│   │   ├── E98N34_10bands_2.5m_clip4.tif
+│   │   ├── E98N34_4328bands_5m_clip4.tif
+│   │   └── E98N34_4328bands_2.5m_clip4.tif
+│   └── train_data/
+│
 └── README.md
 ```
 
@@ -80,7 +90,7 @@ python SR_ISS/training/create_random.py
 Open and run:
 
 ```text
-SR_ISS/training/test_train.ipynb
+SR_ISS/training/train.ipynb
 ```
 
 The notebook contains the complete training workflow for the ISS reconstruction model.
@@ -89,6 +99,12 @@ Required model files are provided in:
 
 ```text
 SR_ISS/utils/
+```
+
+Due to storage limitations, the Sentinel-2 training datasets are provided via Google Drive:
+
+```text
+Google Drive link
 ```
 
 ---
@@ -109,9 +125,26 @@ To obtain the final 2.5 m reconstruction result, the reconstruction procedure mu
 2. 10 m → 5 m
 3. 5 m → 2.5 m
 
+The `10bands` data and `4328bands` data should be used together during reconstruction.
+
+At each stage:
+
+* `10bands` provides the auxiliary high-resolution bands
+* `4328bands` provides the reconstructed SWIR-related bands
+
 After each reconstruction stage, replace the input file path with the generated output from the previous stage before running the next reconstruction step.
 
-The output from the third reconstruction stage is the final super-resolved result.
+Final reconstruction result:
+
+```text
+E98N34_4328bands_2.5m_clip4.tif
+```
+
+Due to storage limitations, the complete 10 m and 20 m Sentinel-2 testing datasets are provided via Google Drive:
+
+```text
+Google Drive link
+```
 
 ---
 
@@ -129,6 +162,7 @@ The reconstructed SWIR1 band is used to improve water boundary delineation and r
 ## Notes
 
 * `experiment.ipynb` is provided as an example reconstruction workflow.
+
 * Sentinel-2 imagery used in this study includes:
 
   * Red
@@ -136,6 +170,7 @@ The reconstructed SWIR1 band is used to improve water boundary delineation and r
   * Blue
   * NIR
   * SWIR1 bands
+
 * The repository focuses on reconstruction and water extraction workflows.
 
 ---
@@ -153,3 +188,4 @@ Super-resolution Water Body Extraction from Sentinel-2 Imagery
 ## License
 
 This project is released for academic research purposes.
+
